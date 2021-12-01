@@ -15,9 +15,10 @@ setlocal commentstring=//\ %s
 " " and insert the comment leader when hitting <CR> or using "o".
 setlocal formatoptions-=t formatoptions+=croql
 
-if !&l:formatexpr && !&l:formatprg
-    setlocal formatexpr=Fixedgq(v:lnum,v:count)
-endif
+" Don't use busted `formatexpr` (issue #247)
+" if !&l:formatexpr && !&l:formatprg
+"     setlocal formatexpr=Fixedgq(v:lnum,v:count)
+" endif
 
 " setlocal foldmethod=syntax
 
